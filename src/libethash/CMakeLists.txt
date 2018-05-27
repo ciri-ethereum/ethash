@@ -42,6 +42,9 @@ set_target_properties(${LIBRARY} PROPERTIES SOVERSION 1)
 set_target_properties(${LIBRARY} PROPERTIES PUBLIC_HEADER ethash.h)
 set_target_properties(${LIBRARY} PROPERTIES PUBLIC_HEADER internal.h)
 
+install(TARGETS ${LIBRARY}
+     LIBRARY DESTINATION lib COMPONENT libraries)
+
 
 if (CRYPTOPP_FOUND)
 	TARGET_LINK_LIBRARIES(${LIBRARY} ${CRYPTOPP_LIBRARIES})
